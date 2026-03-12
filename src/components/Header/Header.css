@@ -1,0 +1,106 @@
+.header {
+  position: absolute; /* Чтобы шапка накладывалась на Hero-блок */
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 100;
+  color: #fff;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* Логотип */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo__img {
+  width: 40px; /* Подбери под размер своего svg */
+  height: auto;
+}
+
+.logo__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo__title {
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: 0.05em;
+}
+
+.logo__subtitle {
+  font-size: 10px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+/* Меню */
+.menu__list {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+}
+
+.menu__link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.menu__link:hover {
+  opacity: 0.7;
+}
+
+.menu__link--active {
+  position: relative;
+}
+
+.menu__link--active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #fff; /* Либо подчеркивание как в макете */
+}
+
+/* Кнопка */
+.header__login-btn {
+  padding: 10px 30px;
+  border-radius: 20px;
+  background: #fff;
+  color: #000;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.header__login-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 1024px) {
+  .menu {
+    display: none; /* Обычно здесь скрываем меню и делаем бургер */
+  }
+}

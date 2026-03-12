@@ -1,0 +1,107 @@
+/* Базовые стили */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  overflow: hidden;
+  padding: 100px 0 50px;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #050505; /* Чтобы точно был фон, если картинка не подгрузится */
+  padding-top: 100px;
+  z-index: 1;
+}
+
+.hero__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.5; /* Для теста сделаем чуть прозрачнее */
+}
+
+.hero__title {
+  color: #ffffff;
+  font-size: 48px;
+  display: block; /* Гарантируем видимость */
+}
+
+.hero__bg {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.hero__title {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+
+.hero__description {
+  max-width: 500px;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+/* Кнопка */
+.button--primary {
+  padding: 15px 40px;
+  border-radius: 30px;
+  background: #fff;
+  color: #000;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Карточки */
+.cards-list {
+  display: flex;
+  gap: 20px;
+  margin-top: 60px;
+  flex-wrap: wrap;
+}
+
+.card-island {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 20px;
+  width: 280px;
+  position: relative;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .hero__title { font-size: 32px; }
+  .cards-list { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+  .hero { text-align: center; }
+  .hero__description { margin: 0 auto 30px; }
+  .hero__socials { display: none; } /* Скрываем или переносим в мобилке */
+}
