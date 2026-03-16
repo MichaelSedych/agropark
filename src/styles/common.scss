@@ -1,0 +1,45 @@
+@use "variables" as v;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif; // Убедись, что шрифт подключен в index.html
+  background-color: v.$bg-dark;
+  color: v.$text-main;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: v.$container-width;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+ul { list-style: none; }
+a { text-decoration: none; color: inherit; }
+
+.button {
+  cursor: pointer;
+  border: none;
+  border-radius: 50px;
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: v.$transition;
+
+  &--primary {
+    background: v.$primary-color;
+    color: #000;
+    &:hover { opacity: 0.9; transform: translateY(-2px); }
+  }
+
+  &--outline {
+    background: transparent;
+    border: 1px solid v.$primary-color;
+    color: v.$primary-color;
+    &:hover { background: v.$primary-color; color: #000; }
+  }
+}
